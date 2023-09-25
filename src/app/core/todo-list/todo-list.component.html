@@ -1,0 +1,24 @@
+
+<h2 class="title">Todos List! </h2>
+<h4 > {{this.user_name}} <img class="image" src="{{this.user_avatar}}" /></h4>
+
+<div class="body">
+    <tr *ngFor="let task of tasks; let i = index" >
+        <td>{{i+1}}</td>
+        <td>{{task}}</td>
+        <td ><mat-slide-toggle class="toggle"></mat-slide-toggle></td>
+        
+         <div class="dltbtn">
+            <button (click)="deletetodo(i)" mat-raised-button color="primary" >Remove Task</button>
+         </div>  
+        
+    </tr>
+   <div class="addbtn">
+        <input type="text" #newtask>
+        <button (click)="addtask(newtask.value)" mat-raised-button color="primary" >Add Task</button>
+    </div>
+    
+   <div class="loginbtn">
+    <button mat-raised-button color="primary" routerLink="/user-table">Login</button>
+   </div>
+</div>   
